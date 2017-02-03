@@ -163,6 +163,7 @@ class Navbar extends React.Component {
       inverse,
       fluid,
       className,
+      containerClassName,
       children,
       ...props
     } = this.props;
@@ -194,7 +195,7 @@ class Navbar extends React.Component {
         {...elementProps}
         className={classNames(className, classes)}
       >
-        <Grid fluid={fluid}>
+        <Grid fluid={fluid} className={containerClassName}>
           {children}
         </Grid>
       </Component>
