@@ -12,6 +12,7 @@ const propTypes = {
   onClick: React.PropTypes.func,
   onSelect: React.PropTypes.func,
   eventKey: React.PropTypes.any,
+  anchorClassName: React.PropTypes.string
 };
 
 const defaultProps = {
@@ -63,6 +64,7 @@ class NavItem extends React.Component {
       >
         <SafeAnchor
           {...props}
+          className={props.anchorClassName}
           disabled={disabled}
           onClick={createChainedFunction(onClick, this.handleClick)}
         />
