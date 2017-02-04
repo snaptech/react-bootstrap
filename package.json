@@ -41,7 +41,7 @@
     "react": ">=0.14.0",
     "react-dom": ">=0.14.0"
   },
-  "devDependencies": {
+  "dependencies": {
     "babel-cli": "^6.11.4",
     "babel-core": "^6.13.2",
     "babel-eslint": "^6.1.2",
@@ -117,8 +117,7 @@
     "webpack": "^1.13.1",
     "webpack-dev-server": "^1.14.1",
     "yargs": "^4.7.1"
-  },
-  "dependencies": {
+
     "babel-runtime": "^6.11.6",
     "classnames": "^2.2.5",
     "dom-helpers": "^3.2.0",
