@@ -8,6 +8,7 @@ import { bsClass, getClassSet, prefix, splitBsProps }
   from './utils/bootstrapUtils';
 import createChainedFunction from './utils/createChainedFunction';
 import ValidComponentChildren from './utils/ValidComponentChildren';
+import { SIZE_MAP, Size } from './utils/StyleConfig';
 
 const propTypes = {
   open: React.PropTypes.bool,
@@ -18,6 +19,7 @@ const propTypes = {
   ]),
   onSelect: React.PropTypes.func,
   rootCloseEvent: React.PropTypes.oneOf(['click', 'mousedown']),
+  bsSize: React.PropTypes.string,
 };
 
 const defaultProps = {
@@ -94,6 +96,7 @@ class DropdownMenu extends React.Component {
       labelledBy,
       onSelect,
       className,
+      bsSize,
       rootCloseEvent,
       children,
       ...props
@@ -105,6 +108,13 @@ class DropdownMenu extends React.Component {
       ...getClassSet(bsProps),
       [prefix(bsProps, 'right')]: pullRight,
     };
+
+    // If user provides a size, make sure to append it to classes as input-
+    // e.g. if bsSize is small, it will append input-sm
+    if (bsSize) {
+      const size = SIZE_MAP[bsSize] || bsSize;
+      classes[prefix({ bsClass: 'dropdown' }, size)] = true;
+    }
 
     return (
       <RootCloseWrapper

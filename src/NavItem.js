@@ -64,7 +64,6 @@ class NavItem extends React.Component {
       >
         <SafeAnchor
           {...props}
-          className={props.anchorClassName}
           disabled={disabled}
           onClick={createChainedFunction(onClick, this.handleClick)}
         />

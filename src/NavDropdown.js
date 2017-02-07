@@ -12,6 +12,7 @@ const propTypes = {
   title: React.PropTypes.node.isRequired,
   noCaret: React.PropTypes.bool,
   active: React.PropTypes.bool,
+  bsSize: React.PropTypes.string,
 
   // Override generated docs from <Dropdown>.
   /**
@@ -46,6 +47,7 @@ class NavDropdown extends React.Component {
       activeHref,
       className,
       style,
+      bsSize,
       children,
       ...props
     } = this.props;
@@ -71,7 +73,8 @@ class NavDropdown extends React.Component {
           {title}
         </Dropdown.Toggle>
 
-        <Dropdown.Menu>
+        <Dropdown.Menu
+          bsSize={bsSize}>
           {ValidComponentChildren.map(children, child => (
             React.cloneElement(child, {
               active: this.isActive(child, activeKey, activeHref),
