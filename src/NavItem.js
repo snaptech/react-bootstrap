@@ -11,8 +11,7 @@ const propTypes = {
   href: React.PropTypes.string,
   onClick: React.PropTypes.func,
   onSelect: React.PropTypes.func,
-  eventKey: React.PropTypes.any,
-  anchorClassName: React.PropTypes.string
+  eventKey: React.PropTypes.any
 };
 
 const defaultProps = {
